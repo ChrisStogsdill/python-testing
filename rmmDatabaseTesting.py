@@ -6,7 +6,7 @@ conn = sqlite3.connect(r'file:\\corp-rmm-01\c$\ProgramData\Admin Arsenal\PDQ Inv
 cur = conn.cursor()
 
 # Find the computers a user is logged into
-cur.execute("SELECT Name FROM Computers WHERE CurrentUser LIKE '%stogsdill%'")
+cur.execute(r"SELECT Name FROM Computers WHERE CurrentUser LIKE '%stogsdill%'")
 
 computerList = cur.fetchall()
 

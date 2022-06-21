@@ -20,7 +20,7 @@ for file in os.listdir(tempLogsDir):
                         print (readLines[25].strip('\n\r'))
                     print(readLines[counter].strip('\n\r'))
                     print(readLines[counter+1].strip('\n\r'))
-                    print('time to copy ', time2Object - time1Object, '\n')
+                    print('time to copy ',totalTime , '\n')
                 
             counter += 1
     f.close()
