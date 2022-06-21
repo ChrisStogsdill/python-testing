@@ -9,10 +9,10 @@ for file in os.listdir(tempLogsDir):
         counter = 0
         for line in readLines:
             if "Copying" in line:
-                time1 = readLines[counter][11:18]
-                time1Object = datetime.strptime(time1, '%H:%M:%S')
-                time2 = readLines[counter+1][11:18]
-                time2Object = datetime.strptime(time2, '%H:%M:%S')
+                time1 = readLines[counter][0:19]
+                time1Object = datetime.strptime(time1, "%m/%d/%Y %H:%M:%S")
+                time2 = readLines[counter+1][0:19]
+                time2Object = datetime.strptime(time2, "%m/%d/%Y %H:%M:%S")
                 totalTime = time2Object - time1Object
                 if totalTime.seconds > 5:
                     print (readLines[0].strip('\n\r'))
@@ -21,6 +21,7 @@ for file in os.listdir(tempLogsDir):
                     print(readLines[counter].strip('\n\r'))
                     print(readLines[counter+1].strip('\n\r'))
                     print('time to copy ',totalTime , '\n')
+                    
                 
             counter += 1
     f.close()
